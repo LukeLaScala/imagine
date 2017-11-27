@@ -1,3 +1,5 @@
+#!venv/bin/python3.6
+
 from flask import Flask
 from flask_script import Manager, Server
 from lhd import app
