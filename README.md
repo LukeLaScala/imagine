@@ -1,3 +1,1 @@
 # lhd-scheduling
-
-Hi Luke!
