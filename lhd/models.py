@@ -11,4 +11,4 @@ class User(db.Model):
     laptop_id = db.Column(db.Unicode(256), nullable=True)
     first_name = db.Column(db.Unicode(256))
     last_name = db.Column(db.Unicode(256))
-    town = db.Column(db.Unicode(256))
+    school = db.Column(db.Unicode(256))

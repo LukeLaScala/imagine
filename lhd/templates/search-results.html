@@ -19,11 +19,12 @@
         <li><a href="need-laptop.html">Needs Laptops</a></li>
         <li><a href="laptops.html">Unreturned Laptops</a></li>
       </ul>
-        <form class="col s12 brand-logo">
+        <form class="col s12 brand-logo" method="post" action="/">
           <div class="row">
             <div class="input-field col s12">
-              <i class="material-icons prefix">search</i>
-              <input id="icon_prefix" type="text" class="validate">
+
+          <i class="material-icons prefix">search</i>
+              {{ form2.search }}
             </div>
           </div>
         </form>
@@ -34,7 +35,7 @@
     <br>
     <br>
     {% for user in users %}
-      <li><a href="{{ url_for('lookup_user', id=user.id) }}">{{ user.first_name + " " + user.last_name + " " + "(" + user.town + ")"}}</li>
+      <li><a href="{{ url_for('lookup_user', id=user.id) }}">{{ user.first_name + " " + user.last_name + " " + "(" + user.school + ")"}}</li>
     {% endfor %}
   </div>
 </body>
