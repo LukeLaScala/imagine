@@ -1,6 +1,6 @@
 from lhd import app, db
 from flask import render_template, request, redirect, url_for
-from .forms import UserEditForm, UserSearchForm
+from .forms import UserEditForm, UserSearchForm, LaptopRegisterForm
 from .models import User
 WORKSHOPS = ['Minecraft Mods', 'Python', 'Web Dev', 'Arduino', 'Scratch', 'Games']
 FIRST   =  [0, 3, 2, 1]
@@ -20,6 +20,27 @@ def search():
 @app.route('/test', methods=['GET', 'POST'])
 def test():
     return str(sessionNumbers(1))
+
+@app.route('/lookup/<id>/l4pt0p5', methods=['GET', 'POST'])
+def laptop_info(id):
+	user = User.query.filter_by(id=id).first()
+
+	if request.method == 'POST':
+		form = LaptopRegisterForm(request.form)
+	else:
+		form = LaptopRegisterForm(obj=user)
+
+	if request.method == 'POST' and form.validate():
+		form.populate_obj(user)
+		user.laptop_out = form.laptop_out
+		user.laptop_id = form.laptop_id
+		print(form.laptop_out)
+		print(form.laptop_id)
+		db.session.commit()
+		return redirect(url_for('laptop_info', id=user.id))
+
+	return render_template('laptop-register.html', form=form,
+	form2=LaptopRegisterForm(), user=user)
 
 @app.route('/lookup/<id>', methods=['GET', 'POST'])
 def lookup_user(id):

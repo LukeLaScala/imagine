@@ -3,9 +3,11 @@ from wtforms import Form, BooleanField, StringField, PasswordField, IntegerField
 
 class UserEditForm(Form):
     id = HiddenField('id')
-    laptop_out = BooleanField('Laptop Out')
-    laptop_id = StringField('Laptop Id')
     workshops = SelectMultipleField(coerce=int, choices=[(0, 'Minecraft Mods'), (1, 'Python'), (2, 'Web Dev'), (3, 'Arduino'), (4, 'Scratch')])
 
 class UserSearchForm(Form):
     search = StringField('search', [validators.DataRequired()])
+
+class LaptopRegisterForm(Form):
+	laptop_out = BooleanField('Laptop Out')
+	laptop_id = StringField('Laptop Id')

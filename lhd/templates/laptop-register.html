@@ -52,26 +52,16 @@
 		<h4>Student Stuff:</h4>
 		<br>
 		<div class="container">
-			<form action="{{ url_for('lookup_user', id=user.id) }}" method="post">
-			   	  <select id="workshops" multiple name="workshops">
-	<option value="0" {% if mine %} selected {% endif %}>Minecraft Mods</option>
-	<option value="1" {% if python %} selected {% endif %}>Python</option>
-	<option value="2" {% if web %} selected {% endif %}>Web Dev</option>
-	<option value="3" {% if arduino %} selected {% endif %}>Arduino</option>
-	<option value="4" {% if scratch %} selected {% endif %}>Scratch</option>
-</select>			   	  
-{{ form.id }}
-<br>
-			   	  
+			<form action="{{ url_for('laptop_info', id=user.id) }}" method="post">   	  
+			   	  <label for="laptop_id">Laptop id</label>
+			   	  {{ form.laptop_id }}
+			   	  <br>
+{{ form.laptop_out }}
+			   	  <label for="laptop_out">Laptop out</label>
 			   	  <br>
 			   	  <br>
 			    <button class="waves-effect waves-light btn">Save</button>
 			</form>
-		<h3>First Block: {% if slot1 is defined %} {{slot1}} {% endif %}</h3>
-		<h3>Second Block: {{ slot2 }}</h3>
-		<h3>Third Block: {{ slot3 }}</h3>
-		<h3>Fourth Block: {{ slot4 }}</h3>
-
 		</div>
 	</div>
 </body>
