@@ -6,8 +6,11 @@
 <body>
 <h1>Imagine 2018</h1>
 <form action='/' method='POST'>
+	<div class="errors">
+		{{ form.email.errors|join(", ")}}
+	</div>
 	<label>Email:</label>
-	<input type='text' name='email'>
+	<input type='email' name='email'>
 	<input type='submit'>
 </form>
 </body>

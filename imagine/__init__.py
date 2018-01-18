@@ -8,5 +8,5 @@ db = SQLAlchemy(app)
 
 
 
-from lhd import views
-from lhd.models import User
+from imagine import views
+from imagine.models import Email

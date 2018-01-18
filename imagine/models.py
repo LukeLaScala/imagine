@@ -1,4 +1,4 @@
-from lhd import db, app
+from imagine import db, app
 
 class Email(db.Model):
     __tablename__ = "emails"
