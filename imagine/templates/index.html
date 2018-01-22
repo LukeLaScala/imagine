@@ -1,17 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Coming Soon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Imagine 2018</title>
+    <link type="text/css" href="static/main.css" rel="stylesheet" />
 </head>
+
 <body>
-<h1>Imagine 2018</h1>
-<form action='/' method='POST'>
-	<div class="errors">
-		{{ form.email.errors|join(", ")}}
-	</div>
-	<label>Email:</label>
-	<input type='email' name='email'>
-	<input type='submit'>
-</form>
+    {% if success %}
+    <div id="success">
+        <img src="static/check.svg" /><span>Success! We'll contact you soon.</span>
+    </div>
+    {% endif %}
+    <section id="galaxy" class="section">
+        <div>
+            <img id="js-image-fallback" src="static/flame.png" />
+            <hgroup class="section__header-group">
+                <h1 class="section__header">Imagine 2018</h1>
+                <h4 class="section__subtext">a hackBCA event</h4>
+            </hgroup>
+        </div>
+        <aside class="prompt" id="js-prompt">
+            <span class="prompt__text">hackBCA V</span>
+            <img class="prompt__arrow" src="static/arrow.svg" />
+        </aside>
+    </section>
+    <section class="section section--white" id="js-scroll-jack">
+        <div>
+            <div class="section__title">
+                <div class="section__track-h" id="js-title"></div>
+            </div>
+            <div class="section__img-container">
+                <div class="section__track-h" id="js-hero"></div>
+            </div>
+        </div>
+        <div class="section__year__wrapper">
+            <div class="section__track-v" id="js-year"></div>
+        </div>
+        <div id="js-dots" class="section__dots"></div>
+    </section>
+    <section class="section section--gray">
+        <hgroup>
+            <h1 class="section__text">More Information to Come</h1>
+            <form action="/" method="POST">
+                <div class="btn-container">
+                    <input name="email" type="email" placeholder="Subscribe for Updates">
+                    <input type="submit" value="">
+                </div>
+            </form>
+        </hgroup>
+        <footer>
+            <a class="icon" href="https://www.facebook.com/BCAhackathon/">
+                <img src="static/icons/facebook.png" />
+            </a>
+            <a class="icon" href="https://www.instagram.com/hackbca/">
+                <img src="static/icons/instagram.png" />
+            </a>
+            <a class="icon" href="https://www.snapchat.com/add/hackbca/">
+                <img src="static/icons/snapchat.png" />
+            </a>
+            <a class="icon" href="https://twitter.com/hackbca/">
+                <img src="static/icons/twitter.png" />
+            </a>
+        </footer>
+        <aside class="prompt" id="js-prompt-2">
+            <img class="prompt__arrow--flipped" src="static/arrow.svg" />
+        </aside>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script src="static/OBJLoader.js"></script>
+    <script src="static/MTLLoader.js"></script>
+    <script src="static/app.js"></script>
 </body>
+
 </html>

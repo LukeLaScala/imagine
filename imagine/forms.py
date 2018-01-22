@@ -9,12 +9,18 @@ class UserEmailForm(Form):
         Form.__init__(self, *args, **kwargs)
 
     def validate(self):
-
         if not Form.validate(self):
             return False
 
-        if not validate_email(self.email.data):
+        if not validate_email(str(self.email.data)):
             self.email.errors.append('Invalid Email')
             return False
 
         return True
+class ContactForm(Form):
+    name = StringField()
+    email = StringField()
+    occupation = StringField()
+    idea = StringField()
+    information = StringField()
+    
